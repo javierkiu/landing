@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,7 +22,7 @@
             <li><a href="#" class="hover:underline">Products</a></li>
             <li><a href="#" class="hover:underline">About Us</a></li>
             <li><a href="#" class="hover:underline">Contact</a></li>
-            <li ><i class="fab fa-whatsapp text-2xl"></i></li>
+            <li ><i class="fab fa-whatsapp text-2xl hover:text-green-300 transition duration-200 hover:cursor-pointer"></i></li>
           </ul>
         </nav>
       </div>
@@ -49,33 +49,40 @@
 
 
       <!-- SECCION DE COMPRAS POR CATEGORIAS -->
-      <section class="flex flex-col justify-center items-center bg-gray-900 text-white max-w-screen-lg mx-auto mb-10">
+      <section class="flex flex-col justify-center items-center bg-gray-900 text-white max-w-screen-lg mx-auto mb-10" id="categorias">
         <h2 class="text-white text-3xl relative flex flex-col items-center pb-4">
             Compra por categorías
             <span class="block w-20 h-1 bg-[#ff6b6b] mt-4"></span>
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-9 p-4">
-          <div class="bg-gray-800 p-6 rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1 text-center">
-            <span class="bg-[#ff6b6b] w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-4">
-              <i class="fas fa-tshirt text-white text-2xl"></i>
-            </span>
-            <h3 class="text-xl font-semibold text-white "> Ropa </h3>
-            <p class="text-gray-400">Explore our collection of trendy clothing.</p>
-          </div>
-          <div class="bg-gray-800 p-6 rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1 text-center">
-            <span class="bg-[#ff6b6b] w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-4">
-              <i class="fas fa-spray-can text-white text-2xl"></i>
-            </span>
-            <h3 class="text-xl font-semibold text-white"> Perfumes </h3>
-            <p class="text-gray-400">Find the perfect fragrance for any occasion.</p>
-          </div>
-          <div class="bg-gray-800 p-6 rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1 text-center">
-            <span class="bg-[#ff6b6b] w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-4">
-              <i class="fas fa-gem text-white text-2xl"></i>
-            </span>
-            <h3 class="text-xl font-semibold text-white"> Accesorios </h3>
-            <p class="text-gray-400">Complete your look with our stylish accessories.</p>
-          </div>
+          <a href="#ropa" class="cursor-pointer">
+            <div class="bg-gray-800 p-6 rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1 text-center">
+              <span class="bg-[#ff6b6b] w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-4">
+                <i class="fas fa-tshirt text-white text-2xl"></i>
+              </span>
+              <h3 class="text-xl font-semibold text-white "> Ropa </h3>
+              <p class="text-gray-400">Explora nuestra colección de ropa a la moda.</p>
+            </div>
+          </a>
+          <a href="#perfumes" class="cursor-pointer">
+            <div class="bg-gray-800 p-6 rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1 text-center">
+              <span class="bg-[#ff6b6b] w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-4">
+                <i class="fas fa-spray-can text-white text-2xl"></i>
+              </span>
+              <h3 class="text-xl font-semibold text-white"> Perfumes </h3>
+              <p class="text-gray-400">Encuentra la fragancia perfecta para cada ocasión.</p>
+            </div>
+          </a>
+          <a href="#accesorios" class="cursor-pointer">
+            <div class="bg-gray-800 p-6 rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1 text-center">
+              <span class="bg-[#ff6b6b] w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-4">
+                <i class="fas fa-gem text-white text-2xl"></i>
+              </span>
+              <h3 class="text-xl font-semibold text-white"> Accesorios </h3>
+              <p class="text-gray-400">Completa tu look con nuestros accesorios.</p>
+            </div>
+          </a>
+        </div>
       </section>
 
 
@@ -102,7 +109,7 @@
                 </span>
               </div>
               <div class="flex justify-between items-center mt-3 mx-1">
-                <i class="far fa-heart text-xl "></i>
+                <i class="far fa-heart text-xl hover:text-[#ff6b6b] hover:cursor-pointer"></i>
                 <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
               </div>
             </div>
@@ -123,7 +130,7 @@
                 </span>
               </div>
               <div class="flex justify-between items-center mt-3 mx-1">
-                <i class="far fa-heart text-xl "></i>
+                <i class="far fa-heart text-xl hover:text-[#ff6b6b] hover:cursor-pointer"></i>
                 <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
               </div>
             </div>
@@ -144,7 +151,7 @@
                 </span>
               </div>
               <div class="flex justify-between items-center mt-3 mx-1">
-                <i class="far fa-heart text-xl "></i>
+                <i class="far fa-heart text-xl hover:text-[#ff6b6b] hover:cursor-pointer"></i>
                 <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
               </div>
             </div>
@@ -165,7 +172,7 @@
                 </span>
               </div>
               <div class="flex justify-between items-center mt-3 mx-1">
-                <i class="far fa-heart text-xl "></i>
+                <i class="far fa-heart text-xl hover:text-[#ff6b6b] hover:cursor-pointer"></i>
                 <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
               </div>
             </div>
@@ -175,7 +182,7 @@
 
       
             <!-- SECCION DE ROPA -->
-      <section class="flex wrap flex-col justify-center items-center bg-gray-900 text-white max-w-screen-xl mx-auto mb-10">
+      <section id="ropa" class="flex wrap flex-col justify-center items-center bg-gray-900 text-white max-w-screen-xl mx-auto mb-10">
         <h2 class="text-white text-3xl relative flex flex-col items-center pb-4">
             Ropa
             <span class="block w-20 h-1 bg-[#ff6b6b] mt-4"></span>
@@ -196,7 +203,7 @@
                 </span>
               </div>
               <div class="flex justify-between items-center mt-3 mx-1">
-                <i class="far fa-heart text-xl "></i>
+                <i class="far fa-heart text-xl hover:text-[#ff6b6b] hover:cursor-pointer"></i>
                 <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
               </div>
             </div>
@@ -216,7 +223,7 @@
                 </span>
               </div>
               <div class="flex justify-between items-center mt-3 mx-1">
-                <i class="far fa-heart text-xl "></i>
+                <i class="far fa-heart text-xl hover:text-[#ff6b6b] hover:cursor-pointer"></i>
                 <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
               </div>
             </div>
@@ -236,7 +243,7 @@
                 </span>
               </div>
               <div class="flex justify-between items-center mt-3 mx-1">
-                <i class="far fa-heart text-xl "></i>
+                <i class="far fa-heart text-xl hover:text-[#ff6b6b] hover:cursor-pointer"></i>
                 <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
               </div>
             </div>
@@ -256,7 +263,7 @@
                 </span>
               </div>
               <div class="flex justify-between items-center mt-3 mx-1">
-                <i class="far fa-heart text-xl "></i>
+                <i class="far fa-heart text-xl hover:text-[#ff6b6b] hover:cursor-pointer"></i>
                 <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
               </div>
             </div>
@@ -266,7 +273,7 @@
 
 
       <!-- SECCION DE PERFUMES -->
-      <section class="flex wrap flex-col justify-center items-center bg-gray-900 text-white max-w-screen-xl mx-auto mb-10">
+      <section id="perfumes" class="flex wrap flex-col justify-center items-center bg-gray-900 text-white max-w-screen-xl mx-auto mb-10">
         <h2 class="text-white text-3xl relative flex flex-col items-center pb-4">
             Perfumes
             <span class="block w-20 h-1 bg-[#ff6b6b] mt-4"></span>
@@ -287,7 +294,7 @@
                 </span>
               </div>
               <div class="flex justify-between items-center mt-3 mx-1">
-                <i class="far fa-heart text-xl "></i>
+                <i class="far fa-heart text-xl hover:text-[#ff6b6b] hover:cursor-pointer"></i>
                 <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
               </div>
             </div>
@@ -307,7 +314,7 @@
                 </span>
               </div>
               <div class="flex justify-between items-center mt-3 mx-1">
-                <i class="far fa-heart text-xl "></i>
+                <i class="far fa-heart text-xl hover:text-[#ff6b6b] hover:cursor-pointer"></i>
                 <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
               </div>
             </div>
@@ -327,7 +334,7 @@
                 </span>
               </div>
               <div class="flex justify-between items-center mt-3 mx-1">
-                <i class="far fa-heart text-xl "></i>
+                <i class="far fa-heart text-xl hover:text-[#ff6b6b] hover:cursor-pointer"></i>
                 <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
               </div>
             </div>
@@ -347,7 +354,7 @@
                 </span>
               </div>
               <div class="flex justify-between items-center mt-3 mx-1">
-                <i class="far fa-heart text-xl "></i>
+                <i class="far fa-heart text-xl hover:text-[#ff6b6b] hover:cursor-pointer"></i>
                 <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
               </div>
             </div>
@@ -356,7 +363,7 @@
       </section>  
 
       <!-- SECCION DE ACCESORIOS -->
-      <section class="flex wrap flex-col justify-center items-center bg-gray-900 text-white max-w-screen-xl mx-auto mb-10">
+      <section id="accesorios" class="flex wrap flex-col justify-center items-center bg-gray-900 text-white max-w-screen-xl mx-auto mb-10">
         <h2 class="text-white text-3xl relative flex flex-col items-center pb-4">
             Accesorios
             <span class="block w-20 h-1 bg-[#ff6b6b] mt-4"></span>
@@ -377,7 +384,7 @@
                 </span>
               </div>
               <div class="flex justify-between items-center mt-3 mx-1">
-                <i class="far fa-heart text-xl "></i>
+                <i class="far fa-heart text-xl hover:text-[#ff6b6b] hover:cursor-pointer"></i>
                 <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
               </div>
             </div>
@@ -397,7 +404,7 @@
                 </span>
               </div>
               <div class="flex justify-between items-center mt-3 mx-1">
-                <i class="far fa-heart text-xl "></i>
+                <i class="far fa-heart text-xl hover:text-[#ff6b6b] hover:cursor-pointer"></i>
                 <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
               </div>
             </div>
@@ -417,7 +424,7 @@
                 </span>
               </div>
               <div class="flex justify-between items-center mt-3 mx-1">
-                <i class="far fa-heart text-xl "></i>
+                <i class="far fa-heart text-xl hover:text-[#ff6b6b]"></i>
                 <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
               </div>
             </div>
@@ -437,7 +444,7 @@
                 </span>
               </div>
               <div class="flex justify-between items-center mt-3 mx-1">
-                <i class="far fa-heart text-xl "></i>
+                <i class="far fa-heart text-xl hover:text-[#ff6b6b]"></i>
                 <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
               </div>
             </div>
@@ -455,11 +462,11 @@
           <label for="nombre" class="text-white font-semibold">Nombre</label>
           <input type="text" id="nombre" class="bg-gray-900 text-white p-3 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#ff6b6b] transition" placeholder="Tu nombre">
           
-          <label for="select" class="text-white font-semibold">Seleccione</label>
+          <label for="select" class="text-white font-semibold">Seleccione su categoría preferida</label>
           <select id="select" class="bg-gray-900 text-white p-3 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#ff6b6b] transition">
-            <option value="value1">Valor 1</option>
-            <option value="value2">Valor 2</option>
-            <option value="value3">Valor 3</option>
+            <option value="value1">Ropa</option>
+            <option value="value2">Perfumes</option>
+            <option value="value3">Accesorios</option>
           </select>
           
           <label for="coment" class="text-white font-semibold">Déjanos un comentario</label>
