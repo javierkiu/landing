@@ -2,12 +2,453 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Shop Store</title>
+    
   </head>
-  <body>
-    <div id="app"></div>
+  <body class="bg-gray-900 text-gray-900">
+    <header class=" bg-gray-800 text-white py-2">
+      <div class="flex max-w-screen-lg mx-auto justify-between items-center">
+        <div class="p-6 flex items-center justify-between ">
+          <span class="block md:hidden"><i class="fas fa-bars text-2xl pr-10"></i></span>
+          <i class="fas fa-tshirt text-white text-2xl pr-5" ></i><span class="text-2xl font-bold tracking-widest">FashionHub</span>
+        </div>
+        <nav class="flex justify-self-end">
+          <ul class="justify-between p-4 hidden md:flex gap-x-10">
+            <li><a href="#" class="hover:underline">Home</a></li>
+            <li><a href="#" class="hover:underline">Products</a></li>
+            <li><a href="#" class="hover:underline">About Us</a></li>
+            <li><a href="#" class="hover:underline">Contact</a></li>
+            <li ><i class="fab fa-whatsapp text-2xl"></i></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+
+
+      <!-- HERO SECTION -->
+      <section class="mb-16" style="
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        ">
+        <div class="max-w-screen-lg mx-auto">
+          <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to FashionHub</h1>
+          <p class="text-lg md:text-xl mb-8">Discover the latest trends in fashion and shop your favorite styles.</p>
+          <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Shop Now</a>
+      </section>
+
+
+      <!-- SECCION DE COMPRAS POR CATEGORIAS -->
+      <section class="flex flex-col justify-center items-center bg-gray-900 text-white max-w-screen-lg mx-auto mb-10">
+        <h2 class="text-white text-3xl relative flex flex-col items-center pb-4">
+            Compra por categorías
+            <span class="block w-20 h-1 bg-[#ff6b6b] mt-4"></span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-9 p-4">
+          <div class="bg-gray-800 p-6 rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1 text-center">
+            <span class="bg-[#ff6b6b] w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-4">
+              <i class="fas fa-tshirt text-white text-2xl"></i>
+            </span>
+            <h3 class="text-xl font-semibold text-white "> Ropa </h3>
+            <p class="text-gray-400">Explore our collection of trendy clothing.</p>
+          </div>
+          <div class="bg-gray-800 p-6 rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1 text-center">
+            <span class="bg-[#ff6b6b] w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-4">
+              <i class="fas fa-spray-can text-white text-2xl"></i>
+            </span>
+            <h3 class="text-xl font-semibold text-white"> Perfumes </h3>
+            <p class="text-gray-400">Find the perfect fragrance for any occasion.</p>
+          </div>
+          <div class="bg-gray-800 p-6 rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1 text-center">
+            <span class="bg-[#ff6b6b] w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-4">
+              <i class="fas fa-gem text-white text-2xl"></i>
+            </span>
+            <h3 class="text-xl font-semibold text-white"> Accesorios </h3>
+            <p class="text-gray-400">Complete your look with our stylish accessories.</p>
+          </div>
+      </section>
+
+
+      <!-- SECCION DE ARTICULOS DESTACADOS -->
+      <section class="flex wrap flex-col justify-center items-center bg-gray-900 text-white max-w-screen-xl mx-auto mb-10">
+        <h2 class="text-white text-3xl relative flex flex-col items-center pb-4">
+            Articulos destacados
+            <span class="block w-20 h-1 bg-[#ff6b6b] mt-4"></span>
+        </h2>
+        <div class="flex flex-wrap justify-center gap-9 p-4">
+          <!-- Camisa -->
+          <div class="bg-gray-800  rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1  w-64 ">
+            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1226&q=80" alt="" class="w-full h-54 object-cover rounded-t-lg">
+            <div class="p-4">
+              <h3 class="font-semibold text-white "> Camisa Casual Hombre</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="font-bold tracking-wider text-[#ff6b6b]">$29.99</span>
+                <span>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star-half-alt text-yellow-500"></i>
+                </span>
+              </div>
+              <div class="flex justify-between items-center mt-3 mx-1">
+                <i class="far fa-heart text-xl "></i>
+                <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
+              </div>
+            </div>
+          </div>
+          <!-- Perfume -->
+          <div class="bg-gray-800  rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1  w-64 ">
+            <img src="https://cdn.pixabay.com/photo/2021/02/13/23/23/perfume-6013027_1280.jpg" alt="" class="w-full h-54 object-cover rounded-t-lg">
+            <div class="p-4">
+              <h3 class="font-semibold text-white "> Perfume Floral</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="font-bold tracking-wider text-[#ff6b6b]">$59.99</span>
+                <span>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500"></i>
+                </span>
+              </div>
+              <div class="flex justify-between items-center mt-3 mx-1">
+                <i class="far fa-heart text-xl "></i>
+                <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
+              </div>
+            </div>
+          </div>
+          <!-- Anillo -->
+          <div class="bg-gray-800  rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1   w-64 ">
+            <img src="https://cdn.pixabay.com/photo/2022/08/16/04/52/jewel-7389356_1280.jpg" alt="" class="w-full h-54 object-cover rounded-t-lg">
+            <div class="p-4">
+              <h3 class="font-semibold text-white "> Anillo de Plata</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="font-bold tracking-wider text-[#ff6b6b]">$39.99</span>
+                <span>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star-half-alt text-yellow-500"></i>
+                </span>
+              </div>
+              <div class="flex justify-between items-center mt-3 mx-1">
+                <i class="far fa-heart text-xl "></i>
+                <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
+              </div>
+            </div>
+          </div>
+          <!-- Lentes -->
+          <div class="bg-gray-800  rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1   w-64 ">
+            <img src="https://cdn.pixabay.com/photo/2018/11/10/18/26/glasses-3807216_1280.jpg" alt="" class="w-full h-54 object-cover rounded-t-lg">
+            <div class="p-4">
+              <h3 class="font-semibold text-white "> Lentes de Sol Modernos</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="font-bold tracking-wider text-[#ff6b6b]">$24.99</span>
+                <span>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500"></i>
+                </span>
+              </div>
+              <div class="flex justify-between items-center mt-3 mx-1">
+                <i class="far fa-heart text-xl "></i>
+                <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>  
+
+      
+            <!-- SECCION DE ROPA -->
+      <section class="flex wrap flex-col justify-center items-center bg-gray-900 text-white max-w-screen-xl mx-auto mb-10">
+        <h2 class="text-white text-3xl relative flex flex-col items-center pb-4">
+            Ropa
+            <span class="block w-20 h-1 bg-[#ff6b6b] mt-4"></span>
+        </h2>
+        <div class="flex flex-wrap justify-center gap-9 p-4">
+          <div class="bg-gray-800  rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1  w-64 ">
+            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1226&q=80" alt="" class="w-full h-54 object-cover rounded-t-lg">
+            <div class="p-4">
+              <h3 class="font-semibold text-white "> Camisa Casual Hombre</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="font-bold tracking-wider text-[#ff6b6b]">$29.99</span>
+                <span>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star-half-alt text-yellow-500"></i>
+                </span>
+              </div>
+              <div class="flex justify-between items-center mt-3 mx-1">
+                <i class="far fa-heart text-xl "></i>
+                <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-800  rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1  w-64 ">
+            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="" class="w-full h-54 object-cover rounded-t-lg">
+            <div class="p-4">
+              <h3 class="font-semibold text-white "> Camiseta Básica Mujer</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="font-bold tracking-wider text-[#ff6b6b]">$19.99</span>
+                <span>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500"></i>
+                </span>
+              </div>
+              <div class="flex justify-between items-center mt-3 mx-1">
+                <i class="far fa-heart text-xl "></i>
+                <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-800  rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1   w-64 ">
+            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="" class="w-full h-54 object-cover rounded-t-lg">
+            <div class="p-4">
+              <h3 class="font-semibold text-white "> Pantalón Slim Fit</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="font-bold tracking-wider text-[#ff6b6b]">$34.99</span>
+                <span>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star-half-alt text-yellow-500"></i>
+                </span>
+              </div>
+              <div class="flex justify-between items-center mt-3 mx-1">
+                <i class="far fa-heart text-xl "></i>
+                <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-800  rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1   w-64 ">
+            <img src="https://images.unsplash.com/photo-1469398715555-76331a6c7c9b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="" class="w-full h-54 object-cover rounded-t-lg">
+            <div class="p-4">
+              <h3 class="font-semibold text-white "> Vestido Elegante</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="font-bold tracking-wider text-[#ff6b6b]">$49.99</span>
+                <span>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500"></i>
+                </span>
+              </div>
+              <div class="flex justify-between items-center mt-3 mx-1">
+                <i class="far fa-heart text-xl "></i>
+                <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>  
+
+
+      <!-- SECCION DE PERFUMES -->
+      <section class="flex wrap flex-col justify-center items-center bg-gray-900 text-white max-w-screen-xl mx-auto mb-10">
+        <h2 class="text-white text-3xl relative flex flex-col items-center pb-4">
+            Perfumes
+            <span class="block w-20 h-1 bg-[#ff6b6b] mt-4"></span>
+        </h2>
+        <div class="flex flex-wrap justify-center gap-9 p-4">
+          <div class="bg-gray-800  rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1  w-64 ">
+            <img src="https://cdn.pixabay.com/photo/2021/02/13/23/23/perfume-6013027_1280.jpg" alt="" class="w-full h-54 object-cover rounded-t-lg">
+            <div class="p-4">
+              <h3 class="font-semibold text-white "> Perfume Floral</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="font-bold tracking-wider text-[#ff6b6b]">$59.99</span>
+                <span>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500"></i>
+                </span>
+              </div>
+              <div class="flex justify-between items-center mt-3 mx-1">
+                <i class="far fa-heart text-xl "></i>
+                <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-800  rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1  w-64 ">
+            <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="" class="w-full h-54 object-cover rounded-t-lg">
+            <div class="p-4">
+              <h3 class="font-semibold text-white "> Perfume Amaderado</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="font-bold tracking-wider text-[#ff6b6b]">$69.99</span>
+                <span>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star-half-alt text-yellow-500"></i>
+                </span>
+              </div>
+              <div class="flex justify-between items-center mt-3 mx-1">
+                <i class="far fa-heart text-xl "></i>
+                <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-800  rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1   w-64 ">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="" class="w-full h-54 object-cover rounded-t-lg">
+            <div class="p-4">
+              <h3 class="font-semibold text-white "> Perfume Cítrico</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="font-bold tracking-wider text-[#ff6b6b]">$54.99</span>
+                <span>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500"></i>
+                </span>
+              </div>
+              <div class="flex justify-between items-center mt-3 mx-1">
+                <i class="far fa-heart text-xl "></i>
+                <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-800  rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1   w-64 ">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="" class="w-full h-54 object-cover rounded-t-lg">
+            <div class="p-4">
+              <h3 class="font-semibold text-white "> Perfume Dulce</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="font-bold tracking-wider text-[#ff6b6b]">$64.99</span>
+                <span>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star-half-alt text-yellow-500"></i>
+                </span>
+              </div>
+              <div class="flex justify-between items-center mt-3 mx-1">
+                <i class="far fa-heart text-xl "></i>
+                <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>  
+
+      <!-- SECCION DE ACCESORIOS -->
+      <section class="flex wrap flex-col justify-center items-center bg-gray-900 text-white max-w-screen-xl mx-auto mb-10">
+        <h2 class="text-white text-3xl relative flex flex-col items-center pb-4">
+            Accesorios
+            <span class="block w-20 h-1 bg-[#ff6b6b] mt-4"></span>
+        </h2>
+        <div class="flex flex-wrap justify-center gap-9 p-4">
+          <div class="bg-gray-800  rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1  w-64 ">
+            <img src="https://cdn.pixabay.com/photo/2022/08/16/04/52/jewel-7389356_1280.jpg" alt="" class="w-full h-54 object-cover rounded-t-lg">
+            <div class="p-4">
+              <h3 class="font-semibold text-white "> Anillo de Plata</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="font-bold tracking-wider text-[#ff6b6b]">$39.99</span>
+                <span>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star-half-alt text-yellow-500"></i>
+                </span>
+              </div>
+              <div class="flex justify-between items-center mt-3 mx-1">
+                <i class="far fa-heart text-xl "></i>
+                <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-800  rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1  w-64 ">
+            <img src="https://cdn.pixabay.com/photo/2018/11/10/18/26/glasses-3807216_1280.jpg" alt="" class="w-full h-54 object-cover rounded-t-lg">
+            <div class="p-4">
+              <h3 class="font-semibold text-white "> Lentes de Sol Modernos</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="font-bold tracking-wider text-[#ff6b6b]">$24.99</span>
+                <span>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500"></i>
+                </span>
+              </div>
+              <div class="flex justify-between items-center mt-3 mx-1">
+                <i class="far fa-heart text-xl "></i>
+                <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-800  rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1   w-64 ">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="" class="w-full h-54 object-cover rounded-t-lg">
+            <div class="p-4">
+              <h3 class="font-semibold text-white "> Pulsera Elegante</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="font-bold tracking-wider text-[#ff6b6b]">$19.99</span>
+                <span>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500"></i>
+                </span>
+              </div>
+              <div class="flex justify-between items-center mt-3 mx-1">
+                <i class="far fa-heart text-xl "></i>
+                <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-800  rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1   w-64 ">
+            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="" class="w-full h-54 object-cover rounded-t-lg">
+            <div class="p-4">
+              <h3 class="font-semibold text-white "> Collar Moderno</h3>
+              <div class="flex justify-between items-center mt-2">
+                <span class="font-bold tracking-wider text-[#ff6b6b]">$29.99</span>
+                <span>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star text-yellow-500 mr-1"></i>
+                  <i class="fas fa-star-half-alt text-yellow-500"></i>
+                </span>
+              </div>
+              <div class="flex justify-between items-center mt-3 mx-1">
+                <i class="far fa-heart text-xl "></i>
+                <button class="rounded-3xl bg-[#ff6b6b] px-5 py-2 font-semibold">Añadir</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>  
+
+    </main>
+    <footer>
+
+    </footer>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

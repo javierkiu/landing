@@ -9,6 +9,32 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.5",
+    "tailwindcss": "^3.4.17",
     "vite": "^6.3.5"
-  }
+  },
+  "description": "Landing page para un cliente con el problema:",
+  "main": "index.js",
+  "dependencies": {
+    "esbuild": "^0.25.5",
+    "fdir": "^6.4.6",
+    "nanoid": "^3.3.11",
+    "picocolors": "^1.1.1",
+    "picomatch": "^4.0.2",
+    "rollup": "^4.43.0",
+    "source-map-js": "^1.2.1",
+    "tinyglobby": "^0.2.14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javierkiu/landing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/javierkiu/landing/issues"
+  },
+  "homepage": "https://github.com/javierkiu/landing#readme"
 }
