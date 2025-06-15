@@ -18,12 +18,18 @@
         section {
             scroll-margin-top: 80px;
         }
-        img {
-            background: url('https://via.placeholder.com/20') center center / 20px no-repeat;
-        }
+       
         input:invalid:focus, select:invalid:focus, textarea:invalid:focus {
             border-color: #ef4444;
             --tw-ring-color: #ef4444;
+        }
+        .no-transition-all {
+            transition-property: none !important;
+            transition-duration: 0s !important;
+        }
+        .no-transition-all * {
+            transition-property: none !important;
+            transition-duration: 0s !important;
         }
     </style>
     <script>
@@ -42,24 +48,23 @@
     </script>
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 min-h-screen">
-    <header class="bg-gray-800 dark:bg-gray-950 text-white py-2 sticky top-0 z-40 shadow-lg transition-all duration-300">
+    <header class="bg-neutral-950 dark:bg-white text-white dark:text-gray-900 py-2 sticky top-0 z-40 shadow-lg transition-all duration-100">
         <div class="flex max-w-screen-lg mx-auto justify-between items-center">
             <div class="p-6 flex items-center justify-between">
-                <span class="block md:hidden cursor-pointer" id="mobile-menu-toggle"><i class="fas fa-bars text-2xl pr-10"></i></span>
-                <i class="fas fa-tshirt text-2xl pr-5 hover:rotate-12 transform transition duration-200"></i>
+                <span class="block md:hidden cursor-pointer" id="mobile-menu-toggle"><i class="fas fa-bars text-2xl pr-10 text-inherit"></i></span>
+                <i class="fas fa-tshirt text-2xl pr-5 hover:rotate-12 transform transition duration-200 text-inherit"></i>
                 <span class="text-2xl font-bold tracking-widest">FashionHub</span>
             </div>
             <nav class="flex justify-self-end">
-                <ul class="justify-between p-4 hidden md:flex gap-x-10 items-center flex-col md:flex-row absolute md:static top-16 left-0 w-full md:w-auto bg-gray-800 dark:bg-gray-950 md:bg-transparent transition-all duration-300" id="mobile-menu">
-                    <li><a href="#" class="hover:text-primary hover:scale-105 transform transition duration-200 focus:ring-2 focus:ring-primary focus:outline-none">Home</a></li>
-                    <li><a href="#" class="hover:text-primary hover:scale-105 transform transition duration-200 focus:ring-2 focus:ring-primary focus:outline-none">Products</a></li>
-                    <li><a href="#" class="hover:text-primary hover:scale-105 transform transition duration-200 focus:ring-2 focus:ring-primary focus:outline-none">About Us</a></li>
-                    <li><a href="#" class="hover:text-primary hover:scale-105 transform transition duration-200 focus:ring-2 focus:ring-primary focus:outline-none">Contact</a></li>
-                    <li><i class="fab fa-whatsapp text-2xl hover:text-green-300 transition duration-200 hover:cursor-pointer" aria-label="Contactar por WhatsApp"></i></li>
+                <ul class="no-transition-all justify-between p-4 hidden md:flex gap-x-10 items-center flex-col md:flex-row absolute md:static top-16 left-0 w-full md:w-auto bg-neutral-950 dark:bg-white will-change-background md:bg-transparent" id="mobile-menu">
+                    <li><a href="#" class="hover:text-primary hover:scale-105 transform transition duration-200 focus:ring-2 focus:ring-primary focus:outline-none text-inherit">Home</a></li>
+                    <li><a href="#articulos_destacados" class="hover:text-primary hover:scale-105 transform transition duration-200 focus:ring-2 focus:ring-primary focus:outline-none text-inherit">Products</a></li>
+                    <li><a href="#forms" class="hover:text-primary hover:scale-105 transform transition duration-200 focus:ring-2 focus:ring-primary focus:outline-none text-inherit">Forms</a></li>
+                    <li><a href="#footer" class="hover:text-primary hover:scale-105 transform transition duration-200 focus:ring-2 focus:ring-primary focus:outline-none text-inherit">Contact</a></li>
                     <li>
                         <button 
                             id="toggle-dark" 
-                            class="px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition flex items-center" 
+                            class="px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 flex items-center no-transition-all" 
                             aria-label="Alternar modo oscuro"
                         >
                             <i class="fas fa-moon dark:hidden"></i>
@@ -74,7 +79,7 @@
     <main>
         <!-- HERO SECTION -->
         <section class="mb-16 bg-fixed" style="
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/workspaces/landing/momo-twice-with-youth-4k-wallpaper-uhdpaper.com-139@1@o.jpg');
             background-size: cover;
             background-position: center;
             height: 500px;
@@ -86,7 +91,7 @@
             <div class="max-w-screen-lg mx-auto px-4 animate-fade-in">
                 <h1 class="text-4xl md:text-6xl font-bold mb-4 font-['Playfair_Display']">Bienvenido a FashionHub</h1>
                 <p class="text-lg md:text-xl mb-8">Renueva tu estilo con productos exclusivos y encuentra todo lo que necesitas para destacar en cualquier ocasión.</p>
-                <a href="#" class="bg-primary hover:bg-red-500 text-white font-bold py-2 px-4 rounded hover:scale-105 transform transition">Comprar ahora</a>
+                <a href="#articulos_destacados" class="bg-primary hover:bg-red-500 text-white font-bold py-2 px-4 rounded hover:scale-105 transform transition">Comprar ahora</a>
             </div>
         </section>
 
@@ -128,7 +133,7 @@
         </section>
 
         <!-- SECCION DE ARTICULOS DESTACADOS -->
-        <section class="flex flex-col justify-center items-center max-w-screen-xl mx-auto mb-10">
+        <section id="articulos_destacados" class="flex flex-col justify-center items-center max-w-screen-xl mx-auto mb-10">
             <h2 class="text-3xl relative flex flex-col items-center pb-4">
                 Artículos destacados
                 <span class="block w-20 h-1 bg-primary mt-4"></span>
@@ -153,7 +158,7 @@
                         </div>
                         <div class="flex justify-between items-center mt-3 mx-1">
                             <i class="far fa-heart text-xl hover:text-primary hover:cursor-pointer"></i>
-                            <button class="rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white">Añadir</button>
+                            <button class="add-to-cart rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white" data-name="Camisa Casual Hombre" data-price="$29.99" data-image="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1226&q=80">Añadir</button>
                         </div>
                     </div>
                 </div>
@@ -176,7 +181,7 @@
                         </div>
                         <div class="flex justify-between items-center mt-3 mx-1">
                             <i class="far fa-heart text-xl hover:text-primary hover:cursor-pointer"></i>
-                            <button class="rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white">Añadir</button>
+                            <button class="add-to-cart rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white" data-name="Perfume Floral" data-price="$59.99" data-image="https://cdn.pixabay.com/photo/2021/02/13/23/23/perfume-6013027_1280.jpg">Añadir</button>
                         </div>
                     </div>
                 </div>
@@ -199,7 +204,7 @@
                         </div>
                         <div class="flex justify-between items-center mt-3 mx-1">
                             <i class="far fa-heart text-xl hover:text-primary hover:cursor-pointer"></i>
-                            <button class="rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white">Añadir</button>
+                            <button class="add-to-cart rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white" data-name="Anillo de Plata" data-price="$39.99" data-image="https://cdn.pixabay.com/photo/2022/08/16/04/52/jewel-7389356_1280.jpg">Añadir</button>
                         </div>
                     </div>
                 </div>
@@ -222,7 +227,7 @@
                         </div>
                         <div class="flex justify-between items-center mt-3 mx-1">
                             <i class="far fa-heart text-xl hover:text-primary hover:cursor-pointer"></i>
-                            <button class="rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white">Añadir</button>
+                            <button class="add-to-cart rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white" data-name="Lentes de Sol Modernos" data-price="$24.99" data-image="https://cdn.pixabay.com/photo/2018/11/10/18/26/glasses-3807216_1280.jpg">Añadir</button>
                         </div>
                     </div>
                 </div>
@@ -255,17 +260,17 @@
                         </div>
                         <div class="flex justify-between items-center mt-3 mx-1">
                             <i class="far fa-heart text-xl hover:text-primary hover:cursor-pointer"></i>
-                            <button class="rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white">Añadir</button>
+                            <button class="add-to-cart rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white" data-name="Camisa Casual Hombre" data-price="$29.99" data-image="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1226&q=80">Añadir</button>
                         </div>
                     </div>
                 </div>
                 <div class="bg-white dark:bg-gray-800 rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1 shadow-lg relative group">
-                    <div class="absolute top-0 left-0 right-0 h-64 bg-primary bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 cursor-pointer" data-modal-target="product-modal" data-name="Tacones de Mujer" data-price="$19.99" data-image="https://fastly.picsum.photos/id/21/3008/2008.jpg?hmac=T8DSVNvP-QldCew7WD4jj_S3mWwxZPqdF0CNPksSko4">
+                    <div class="absolute top-0 left-0 right-0 h-64 bg-primary bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 cursor-pointer" data-modal-target="product-modal" data-name="Vestido de Mujer" data-price="$19.99" data-image="https://i.pinimg.com/736x/51/db/67/51db67e7cb0456d4c9023e33fbde8d55.jpg">
                         <span class="text-white font-semibold">Ver Detalles</span>
                     </div>
-                    <img src="https://fastly.picsum.photos/id/21/3008/2008.jpg?hmac=T8DSVNvP-QldCew7WD4jj_S3mWwxZPqdF0CNPksSko4" alt="Tacones" class="w-full h-64 object-cover rounded-t-lg">
+                    <img src="https://i.pinimg.com/736x/51/db/67/51db67e7cb0456d4c9023e33fbde8d55.jpg" alt="Vestido" class="w-full h-64 object-cover rounded-t-lg">
                     <div class="p-4">
-                        <h3 class="font-semibold">Tacones de Mujer</h3>
+                        <h3 class="font-semibold">Vestido de Mujer</h3>
                         <div class="flex justify-between items-center mt-2">
                             <span class="font-bold tracking-wider text-white bg-primary px-2 py-1 rounded">$19.99</span>
                             <span>
@@ -278,15 +283,15 @@
                         </div>
                         <div class="flex justify-between items-center mt-3 mx-1">
                             <i class="far fa-heart text-xl hover:text-primary hover:cursor-pointer"></i>
-                            <button class="rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white">Añadir</button>
+                            <button class="add-to-cart rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white" data-name="Vestido de Mujer" data-price="$19.99" data-image="https://i.pinimg.com/736x/51/db/67/51db67e7cb0456d4c9023e33fbde8d55.jpg">Añadir</button>
                         </div>
                     </div>
                 </div>
                 <div class="bg-white dark:bg-gray-800 rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1 shadow-lg relative group">
-                    <div class="absolute top-0 left-0 right-0 h-64 bg-primary bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 cursor-pointer" data-modal-target="product-modal" data-name="Camisa Casual Mujer" data-price="$34.99" data-image="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80">
+                    <div class="absolute top-0 left-0 right-0 h-64 bg-primary bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 cursor-pointer" data-modal-target="product-modal" data-name="Camisa Casual Mujer" data-price="$34.99" data-image="https://i.pinimg.com/736x/06/1b/82/061b8225ba28a10ad175cd0a5e7eae82.jpg">
                         <span class="text-white font-semibold">Ver Detalles</span>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Camisa" class="w-full h-64 object-cover rounded-t-lg">
+                    <img src="https://i.pinimg.com/736x/06/1b/82/061b8225ba28a10ad175cd0a5e7eae82.jpg" alt="Camisa" class="w-full h-64 object-cover rounded-t-lg">
                     <div class="p-4">
                         <h3 class="font-semibold">Camisa Casual Mujer</h3>
                         <div class="flex justify-between items-center mt-2">
@@ -301,7 +306,7 @@
                         </div>
                         <div class="flex justify-between items-center mt-3 mx-1">
                             <i class="far fa-heart text-xl hover:text-primary hover:cursor-pointer"></i>
-                            <button class="rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white">Añadir</button>
+                            <button class="add-to-cart rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white" data-name="Camisa Casual Mujer" data-price="$34.99" data-image="https://i.pinimg.com/736x/06/1b/82/061b8225ba28a10ad175cd0a5e7eae82.jpg">Añadir</button>
                         </div>
                     </div>
                 </div>
@@ -324,7 +329,7 @@
                         </div>
                         <div class="flex justify-between items-center mt-3 mx-1">
                             <i class="far fa-heart text-xl hover:text-primary hover:cursor-pointer"></i>
-                            <button class="rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white">Añadir</button>
+                            <button class="add-to-cart rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white" data-name="Chaqueta Jean" data-price="$49.99" data-image="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80">Añadir</button>
                         </div>
                     </div>
                 </div>
@@ -357,7 +362,7 @@
                         </div>
                         <div class="flex justify-between items-center mt-3 mx-1">
                             <i class="far fa-heart text-xl hover:text-primary hover:cursor-pointer"></i>
-                            <button class="rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white">Añadir</button>
+                            <button class="add-to-cart rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white" data-name="Perfume Floral" data-price="$59.99" data-image="https://cdn.pixabay.com/photo/2021/02/13/23/23/perfume-6013027_1280.jpg">Añadir</button>
                         </div>
                     </div>
                 </div>
@@ -380,7 +385,7 @@
                         </div>
                         <div class="flex justify-between items-center mt-3 mx-1">
                             <i class="far fa-heart text-xl hover:text-primary hover:cursor-pointer"></i>
-                            <button class="rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white">Añadir</button>
+                            <button class="add-to-cart rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white" data-name="Perfume Amaderado" data-price="$69.99" data-image="https://cdn.pixabay.com/photo/2017/03/14/11/39/perfume-2142817_1280.jpg">Añadir</button>
                         </div>
                     </div>
                 </div>
@@ -403,7 +408,7 @@
                         </div>
                         <div class="flex justify-between items-center mt-3 mx-1">
                             <i class="far fa-heart text-xl hover:text-primary hover:cursor-pointer"></i>
-                            <button class="rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white">Añadir</button>
+                            <button class="add-to-cart rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white" data-name="Perfume Cítrico" data-price="$54.99" data-image="https://cdn.pixabay.com/photo/2023/06/01/06/21/perfume-8032808_1280.jpg">Añadir</button>
                         </div>
                     </div>
                 </div>
@@ -426,7 +431,7 @@
                         </div>
                         <div class="flex justify-between items-center mt-3 mx-1">
                             <i class="far fa-heart text-xl hover:text-primary hover:cursor-pointer"></i>
-                            <button class="rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white">Añadir</button>
+                            <button class="add-to-cart rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white" data-name="Perfume Dulce" data-price="$64.99" data-image="https://cdn.pixabay.com/photo/2017/10/03/12/07/bottle-2812214_960_720.jpg">Añadir</button>
                         </div>
                     </div>
                 </div>
@@ -459,7 +464,7 @@
                         </div>
                         <div class="flex justify-between items-center mt-3 mx-1">
                             <i class="far fa-heart text-xl hover:text-primary hover:cursor-pointer"></i>
-                            <button class="rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white">Añadir</button>
+                            <button class="add-to-cart rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white" data-name="Anillo de Plata" data-price="$39.99" data-image="https://cdn.pixabay.com/photo/2022/08/16/04/52/jewel-7389356_1280.jpg">Añadir</button>
                         </div>
                     </div>
                 </div>
@@ -482,7 +487,7 @@
                         </div>
                         <div class="flex justify-between items-center mt-3 mx-1">
                             <i class="far fa-heart text-xl hover:text-primary hover:cursor-pointer"></i>
-                            <button class="rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white">Añadir</button>
+                            <button class="add-to-cart rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white" data-name="Lentes de Sol Modernos" data-price="$24.99" data-image="https://cdn.pixabay.com/photo/2018/11/10/18/26/glasses-3807216_1280.jpg">Añadir</button>
                         </div>
                     </div>
                 </div>
@@ -505,7 +510,7 @@
                         </div>
                         <div class="flex justify-between items-center mt-3 mx-1">
                             <i class="far fa-heart text-xl hover:text-primary hover:cursor-pointer"></i>
-                            <button class="rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white">Añadir</button>
+                            <button class="add-to-cart rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white" data-name="Reloj elegante" data-price="$19.99" data-image="https://cdn.pixabay.com/photo/2021/09/13/11/45/watch-6621128_960_720.jpg">Añadir</button>
                         </div>
                     </div>
                 </div>
@@ -528,35 +533,49 @@
                         </div>
                         <div class="flex justify-between items-center mt-3 mx-1">
                             <i class="far fa-heart text-xl hover:text-primary hover:cursor-pointer"></i>
-                            <button class="rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white">Añadir</button>
+                            <button class="add-to-cart rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white" data-name="Collar con corazón" data-price="$29.99" data-image="https://cdn.pixabay.com/photo/2017/10/29/20/26/necklace-with-winged-heart-2900727_1280.jpg">Añadir</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Formulario de contacto -->
-        <section class="w-full lg:w-3/4 mx-auto mb-10">
+        <!-- Formulario de contacto y Carrito -->
+        <section id="forms" class="w-full lg:w-3/4 mx-auto mb-10">
             <h2 class="text-3xl relative flex flex-col items-center pb-4">
                 ¡Déjanos un comentario!
                 <span class="block w-20 h-1 bg-primary mt-4"></span>
             </h2>
-            <div class="flex flex-col gap-4 md:w-1/2 mx-auto bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
-                <label for="nombre" class="font-semibold">Nombre</label>
-                <input type="text" id="nombre" required class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white p-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition" placeholder="Tu nombre">
-                
-                <label for="select" class="font-semibold">Seleccione su categoría preferida</label>
-                <select id="select" required class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white p-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition">
-                    <option value="value1">Ropa</option>
-                    <option value="value2">Perfumes</option>
-                    <option value="value3">Accesorios</option>
-                </select>
-                
-                <label for="coment" class="font-semibold">Déjanos un comentario</label>
-                <textarea id="coment" required class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white p-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition" rows="4" placeholder="Escribe tu comentario"></textarea>
-                
-                <button type="button" onclick="alert('Comentario enviado!')" class="bg-primary hover:bg-red-500 text-white font-bold py-3 rounded-lg mt-2 transition hover:scale-105 transform">Enviar</button>
-            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-screen-lg mx-auto">
+                <!-- Formulario -->
+                <div class="flex flex-col gap-4 bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+                    <label for="nombre" class="font-semibold">Nombre</label>
+                    <input type="text" id="nombre" required class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white p-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition" placeholder="Tu nombre">
+                    
+                    <label for="select" class="font-semibold">Seleccione su categoría preferida</label>
+                    <select id="select" required class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white p-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition">
+                        <option value="value1">Ropa</option>
+                        <option value="value2">Perfumes</option>
+                        <option value="value3">Accesorios</option>
+                    </select>
+                    
+                    <label for="coment" class="font-semibold">Déjanos un comentario</label>
+                    <textarea id="coment" required class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white p-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition" rows="4" placeholder="Escribe tu comentario"></textarea>
+                    
+                    <button type="button" onclick="alert('Comentario enviado!')" class="bg-primary hover:bg-red-500 text-white font-bold py-3 rounded-lg mt-2 transition hover:scale-105 transform">Enviar</button>
+                </div>
+                <!-- Carrito -->
+                <div class="flex flex-col gap-4 bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold">Carrito de Compras</h3>
+                    <div id="cart-items" class="flex flex-col gap-4 max-h-96 overflow-y-auto">
+                        <!-- Los artículos se renderizarán aquí dinámicamente -->
+                    </div>
+                    <p id="cart-empty" class="text-gray-600 dark:text-gray-400 hidden">El carrito está vacío.</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="font-semibold">Total:</span>
+                        <span id="cart-total" class="font-bold text-primary">$0.00</span>
+                    </div>
+<button id="finalize-purchase" class="bg-red-500 hover:bg-red-600 text-white font-bold py-3 rounded-lg mt-2 transition hover:scale-105 transform hidden">Finalizar Compra</button>            </div>
         </section>
     </main>
 
@@ -574,7 +593,7 @@
         </div>
     </div>
 
-    <footer class="bg-gray-800 dark:bg-gray-950 text-white py-6">
+    <footer id="footer" class="bg-gray-800 dark:bg-gray-950 text-white py-6">
         <div class="max-w-screen-lg mx-auto text-center">
             <div class="mb-4 max-w-md mx-auto">
                 <form class="flex justify-center gap-2">
@@ -591,6 +610,6 @@
         </div>
     </footer>
 
-    <script src="/src/main.js"></script>
+    <script type="module" src="/src/main.js"></script>
 </body>
 </html>
