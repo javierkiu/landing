@@ -588,7 +588,9 @@
             </div>
             <img id="modal-image" src="" alt="Producto" class="w-full h-64 object-cover rounded-lg mb-4">
             <p class="text-lg font-bold text-primary mb-2" id="modal-price">$0.00</p>
-            <p class="text-gray-600 dark:text-gray-400 mb-4">Descripción del producto: Este es un producto de alta calidad, diseñado para destacar en cualquier ocasión. Perfecto para combinar con tu estilo personal.</p>
+            <p class="text-gray-600 dark:text-gray-400 mb-4" id="modal-description">
+                <!-- Descripción específica del producto aquí -->
+            </p>
             <button class="bg-primary hover:bg-red-500 text-white font-bold py-2 px-4 rounded w-full hover:scale-105 transform transition">Añadir al carrito</button>
         </div>
     </div>
@@ -611,5 +613,34 @@
     </footer>
 
     <script type="module" src="/src/main.js"></script>
+
+    <script>
+        // Descripciones específicas para cada producto
+        const productDescriptions = {
+            "Camisa Casual Hombre": "Camisa de algodón suave, ideal para un look casual y cómodo. Disponible en varias tallas y colores.",
+            "Perfume Floral": "Fragancia fresca y floral con notas de jazmín y rosa. Perfecto para el día a día y ocasiones especiales.",
+            "Anillo de Plata": "Anillo elegante de plata 925, diseño minimalista y moderno. Ideal para complementar cualquier atuendo.",
+            "Lentes de Sol Modernos": "Lentes de sol con protección UV400 y diseño contemporáneo. Ligeros y cómodos para uso diario.",
+            "Vestido de Mujer": "Vestido ligero y elegante, perfecto para eventos formales o salidas casuales. Disponible en varios colores.",
+            "Camisa Casual Mujer": "Camisa versátil de manga larga, confeccionada en tela transpirable. Ideal para combinar con jeans o faldas.",
+            "Chaqueta Jean": "Chaqueta de mezclilla clásica, resistente y a la moda. Un básico imprescindible en tu guardarropa.",
+            "Perfume Amaderado": "Aroma intenso y sofisticado con notas amaderadas y especiadas. Ideal para quienes buscan destacar.",
+            "Perfume Cítrico": "Fragancia energizante con notas de cítricos frescos. Perfecta para días calurosos y actividades al aire libre.",
+            "Perfume Dulce": "Perfume dulce y envolvente con toques de vainilla y caramelo. Ideal para quienes aman los aromas cálidos.",
+            "Reloj elegante": "Reloj de pulsera con correa de cuero y esfera minimalista. Un accesorio sofisticado para cualquier ocasión.",
+            "Collar con corazón": "Collar delicado con dije de corazón, bañado en oro. Un regalo perfecto para alguien especial."
+        };
+
+        // Modifica el modal para mostrar la descripción específica
+        document.addEventListener('DOMContentLoaded', () => {
+            const modalDescription = document.getElementById('modal-description');
+            document.querySelectorAll('[data-modal-target]').forEach(trigger => {
+                trigger.addEventListener('click', () => {
+                    const name = trigger.getAttribute('data-name');
+                    modalDescription.textContent = productDescriptions[name] || "Producto de alta calidad, diseñado para destacar en cualquier ocasión.";
+                });
+            });
+        });
+    </script>
 </body>
 </html>
