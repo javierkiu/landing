@@ -11,18 +11,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalName = document.getElementById('modal-name');
     const modalPrice = document.getElementById('modal-price');
     const modalImage = document.getElementById('modal-image');
+    const addToCartModalButton = document.getElementById('add-to-cart-modal'); // New button
     const cartItemsContainer = document.getElementById('cart-items');
     const cartEmptyMessage = document.getElementById('cart-empty');
     const cartTotalElement = document.getElementById('cart-total');
     const finalizePurchaseButton = document.getElementById('finalize-purchase');
+    const orderModal = document.getElementById('order-modal');
+    const closeOrderModalButton = document.getElementById('close-order-modal');
+    const orderItemsContainer = document.getElementById('order-items');
+    const orderTotalElement = document.getElementById('order-total');
+    const orderTimestampElement = document.getElementById('order-timestamp');
+    const confirmOrderButton = document.getElementById('confirm-order');
+    const toastNotification = document.getElementById('toast-notification');
+    const toastNotification2 = document.getElementById('toast-notification2');
 
     // Verificar que todos los elementos necesarios existan
-    if (!cartItemsContainer || !cartEmptyMessage || !cartTotalElement || !finalizePurchaseButton) {
+    if (!cartItemsContainer || !cartEmptyMessage || !cartTotalElement || !finalizePurchaseButton || !orderModal || !closeOrderModalButton || !orderItemsContainer || !orderTotalElement || !orderTimestampElement || !confirmOrderButton || !toastNotification || !addToCartModalButton) {
         console.error('Critical DOM elements are missing:', {
             cartItemsContainer,
             cartEmptyMessage,
             cartTotalElement,
-            finalizePurchaseButton
+            finalizePurchaseButton,
+            orderModal,
+            closeOrderModalButton,
+            orderItemsContainer,
+            orderTotalElement,
+            orderTimestampElement,
+            confirmOrderButton,
+            toastNotification,
+            addToCartModalButton
         });
         return;
     }
@@ -35,7 +52,15 @@ document.addEventListener('DOMContentLoaded', () => {
         cartItemsContainer,
         cartEmptyMessage,
         cartTotalElement,
-        finalizePurchaseButton
+        finalizePurchaseButton,
+        orderModal,
+        closeOrderModalButton,
+        orderItemsContainer,
+        orderTotalElement,
+        orderTimestampElement,
+        confirmOrderButton,
+        toastNotification,
+        addToCartModalButton
     });
 
     // Dark mode toggle
@@ -73,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Modal handling
+    // Product Modal handling
     document.querySelectorAll('[data-modal-target]').forEach(trigger => {
         trigger.addEventListener('click', () => {
             const name = trigger.getAttribute('data-name');
@@ -98,6 +123,79 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Add to cart from modal
+    addToCartModalButton.addEventListener('click', () => {
+        const name = modalName.textContent;
+        const price = modalPrice.textContent;
+        const image = modalImage.src;
+
+        console.log('Adding to cart from modal:', { name, price, image });
+
+        const cartURL = `${databaseURL}/cart.json`;
+
+        fetch(cartURL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name,
+                price,
+                image,
+                quantity: 1
+            })
+        })
+            .then(response => {
+                console.log('POST response status:', response.status);
+                if (!response.ok) {
+                    throw new Error(`Error adding to cart: ${response.statusText}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Item added to cart:', data);
+                showToast(); // Show toast notification
+                setTimeout(fetchCart, 100); // Retraso mínimo para propagación
+                productModal.classList.add('hidden'); // Close modal after adding
+            })
+            .catch(error => {
+                console.error('Error adding item to cart:', error);
+                alert('Error al añadir al carrito. Por favor, intenta de nuevo.');
+            });
+    });
+
+    // Order Modal handling
+    closeOrderModalButton.addEventListener('click', () => {
+        orderModal.classList.add('hidden');
+    });
+
+    orderModal.addEventListener('click', (e) => {
+        if (e.target === orderModal) {
+            orderModal.classList.add('hidden');
+        }
+    });
+
+    confirmOrderButton.addEventListener('click', () => {
+        orderModal.classList.add('hidden');
+    });
+
+    // Show toast notification
+    function showToast() {
+        toastNotification.classList.remove('hidden');
+        toastNotification.classList.add('animate-toast-in');
+        setTimeout(() => {
+            toastNotification.classList.add('hidden');
+            toastNotification.classList.remove('animate-toast-in');
+        }, 2000); // Hide after 3 seconds
+    }
+    function showToast2() {
+        toastNotification2.classList.remove('hidden');
+        toastNotification2.classList.add('animate-toast-in');
+        setTimeout(() => {
+            toastNotification2.classList.add('hidden');
+            toastNotification2.classList.remove('animate-toast-in');
+        }, 2000); // Hide after 3 seconds
+    }
     // Add to cart
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', () => {
@@ -130,10 +228,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                 .then(data => {
                     console.log('Item added to cart:', data);
+                    showToast(); // Show toast notification
                     setTimeout(fetchCart, 100); // Retraso mínimo para propagación
                 })
                 .catch(error => {
                     console.error('Error adding item to cart:', error);
+                    alert('Error al añadir al carrito. Por favor, intenta de nuevo.');
                 });
         });
     });
@@ -171,32 +271,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Render cart
-    function renderCart(items) {
+    function renderCart(items, container = cartItemsContainer, showRemoveButton = true) {
         console.log('Rendering cart with items:', items);
-        if (!cartItemsContainer || !cartEmptyMessage || !finalizePurchaseButton || !cartTotalElement) {
+        if (!container || !cartEmptyMessage || !finalizePurchaseButton || !cartTotalElement) {
             console.error('One or more DOM elements are missing:', {
-                cartItemsContainer,
+                container,
                 cartEmptyMessage,
                 finalizePurchaseButton,
                 cartTotalElement
             });
-            return;
+            return 0;
         }
 
-        cartItemsContainer.innerHTML = '';
+        container.innerHTML = '';
         let total = 0;
 
         if (!items || Object.keys(items).length === 0) {
             console.log('Cart is empty, showing empty message');
-            cartEmptyMessage.classList.remove('hidden');
-            finalizePurchaseButton.classList.add('hidden');
-            cartTotalElement.textContent = '$0.00';
-            return;
+            if (container === cartItemsContainer) {
+                cartEmptyMessage.classList.remove('hidden');
+                finalizePurchaseButton.classList.add('hidden');
+                cartTotalElement.textContent = '$0.00';
+            }
+            return 0;
         }
 
         console.log('Cart has items, rendering items');
-        cartEmptyMessage.classList.add('hidden');
-        finalizePurchaseButton.classList.remove('hidden');
+        if (container === cartItemsContainer) {
+            cartEmptyMessage.classList.add('hidden');
+            finalizePurchaseButton.classList.remove('hidden');
+        }
 
         Object.entries(items).forEach(([id, item]) => {
             console.log('Rendering item:', { id, item });
@@ -213,18 +317,29 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h4 class="font-semibold">${item.name}</h4>
                     <p class="text-gray-600 dark:text-gray-400">${item.price} x ${item.quantity}</p>
                 </div>
-                <button class="remove-from-cart text-red-500 hover:text-red-600" data-id="${id}">
+                ${showRemoveButton ? `<button class="remove-from-cart text-red-500 hover:text-red-600" data-id="${id}">
                     <i class="fas fa-trash"></i>
-                </button>
+                </button>` : ''}
             `;
-            cartItemsContainer.appendChild(itemElement);
+            container.appendChild(itemElement);
 
             const priceValue = parseFloat(item.price.replace('$', '')) * item.quantity;
             total += priceValue;
         });
 
-        cartTotalElement.textContent = `$${total.toFixed(2)}`;
-        setupRemoveButtons();
+        if (container === cartItemsContainer) {
+            cartTotalElement.textContent = `$${total.toFixed(2)}`;
+            setupRemoveButtons();
+        }
+        return total;
+    }
+
+    // Render order summary
+    function renderOrderSummary(items, total, timestamp) {
+        orderTotalElement.textContent = `$${total.toFixed(2)}`;
+        orderTimestampElement.textContent = new Date(timestamp).toLocaleString();
+        renderCart(items, orderItemsContainer, false); // Reuse renderCart without remove buttons
+        orderModal.classList.remove('hidden');
     }
 
     // Fetch cart data
@@ -277,6 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(cartData => {
                 if (!cartData || Object.keys(cartData).length === 0) {
                     console.log('El carrito está vacío');
+                    alert('El carrito está vacío. Añade productos antes de finalizar el pedido.');
                     return;
                 }
 
@@ -298,6 +414,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             throw new Error(`Error sending order: ${response.statusText}`);
                         }
                         console.log('Order sent to Firebase');
+                        showToast2(); // Show toast notification
+                        renderOrderSummary(order.items, order.total, order.timestamp);
                         return fetch(cartURL, {
                             method: 'DELETE',
                             headers: {
@@ -312,6 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(error => {
                 console.error('Error finalizing purchase:', error);
+                alert('Error al finalizar el pedido. Por favor, intenta de nuevo.');
             });
     });
 

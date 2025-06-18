@@ -15,10 +15,16 @@
         .animate-fade-in {
             animation: fadeIn 0.7s ease-out;
         }
+        @keyframes toastSlideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-toast-in {
+            animation: toastSlideIn 0.3s ease-out;
+        }
         section {
             scroll-margin-top: 80px;
         }
-       
         input:invalid:focus, select:invalid:focus, textarea:invalid:focus {
             border-color: #ef4444;
             --tw-ring-color: #ef4444;
@@ -140,12 +146,12 @@
             </h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-9 p-4">
                 <div class="bg-white dark:bg-gray-800 rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1 shadow-lg relative group">
-                    <div class="absolute top-0 left-0 right-0 h-64 bg-primary bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 cursor-pointer" data-modal-target="product-modal" data-name="Camisa Casual Hombre" data-price="$29.99" data-image="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1226&q=80">
+                    <div class="absolute top-0 left-0 right-0 h-64 bg-primary bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 cursor-pointer" data-modal-target="product-modal" data-name="Abrigo Casual Mujer" data-price="$29.99" data-image="https://img.kwcdn.com/product/fancy/2b773043-1b82-4a40-8d21-94c7eb146f01.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp">
                         <span class="text-white font-semibold">Ver Detalles</span>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1226&q=80" alt="Camisa" class="w-full h-64 object-cover rounded-t-lg">
+                    <img src="https://img.kwcdn.com/product/fancy/2b773043-1b82-4a40-8d21-94c7eb146f01.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp" alt="Camisa" class="w-full h-64 object-cover rounded-t-lg">
                     <div class="p-4">
-                        <h3 class="font-semibold">Camisa Casual Hombre</h3>
+                        <h3 class="font-semibold">Abrigo Casual Mujer</h3>
                         <div class="flex justify-between items-center mt-2">
                             <span class="font-bold tracking-wider text-white bg-primary px-2 py-1 rounded">$29.99</span>
                             <span>
@@ -158,7 +164,7 @@
                         </div>
                         <div class="flex justify-between items-center mt-3 mx-1">
                             <i class="far fa-heart text-xl hover:text-primary hover:cursor-pointer"></i>
-                            <button class="add-to-cart rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white" data-name="Camisa Casual Hombre" data-price="$29.99" data-image="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1226&q=80">Añadir</button>
+                            <button class="add-to-cart rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white" data-name="Abrigo Casual Mujer" data-price="$29.99" data-image="https://img.kwcdn.com/product/fancy/2b773043-1b82-4a40-8d21-94c7eb146f01.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp">Añadir</button>
                         </div>
                     </div>
                 </div>
@@ -242,12 +248,12 @@
             </h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-9 p-4">
                 <div class="bg-white dark:bg-gray-800 rounded-lg transform transition duration-300 hover:scale-105 hover:-translate-y-1 shadow-lg relative group">
-                    <div class="absolute top-0 left-0 right-0 h-64 bg-primary bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 cursor-pointer" data-modal-target="product-modal" data-name="Camisa Casual Hombre" data-price="$29.99" data-image="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1226&q=80">
+                    <div class="absolute top-0 left-0 right-0 h-64 bg-primary bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 cursor-pointer" data-modal-target="product-modal" data-name="Abrigo Casual Mujer" data-price="$29.99" data-image="https://img.kwcdn.com/product/fancy/2b773043-1b82-4a40-8d21-94c7eb146f01.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp">
                         <span class="text-white font-semibold">Ver Detalles</span>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1226&q=80" alt="Camisa" class="w-full h-64 object-cover rounded-t-lg">
+                    <img src="https://img.kwcdn.com/product/fancy/2b773043-1b82-4a40-8d21-94c7eb146f01.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp" alt="Camisa" class="w-full h-64 object-cover rounded-t-lg">
                     <div class="p-4">
-                        <h3 class="font-semibold">Camisa Casual Hombre</h3>
+                        <h3 class="font-semibold">Abrigo Casual Mujer</h3>
                         <div class="flex justify-between items-center mt-2">
                             <span class="font-bold tracking-wider text-white bg-primary px-2 py-1 rounded">$29.99</span>
                             <span>
@@ -260,7 +266,7 @@
                         </div>
                         <div class="flex justify-between items-center mt-3 mx-1">
                             <i class="far fa-heart text-xl hover:text-primary hover:cursor-pointer"></i>
-                            <button class="add-to-cart rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white" data-name="Camisa Casual Hombre" data-price="$29.99" data-image="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1226&q=80">Añadir</button>
+                            <button class="add-to-cart rounded-3xl bg-primary hover:bg-red-500 px-5 py-2 font-semibold text-white" data-name="Abrigo Casual Mujer" data-price="$29.99" data-image="https://img.kwcdn.com/product/fancy/2b773043-1b82-4a40-8d21-94c7eb146f01.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp">Añadir</button>
                         </div>
                     </div>
                 </div>
@@ -566,7 +572,7 @@
                 </div>
                 <!-- Carrito -->
                 <div class="flex flex-col gap-4 bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
-                    <h3 class="text-2xl font-semibold">Carrito de Compras</h3>
+                    <h3 class="text-2xl font-semibold">Pedidos</h3>
                     <div id="cart-items" class="flex flex-col gap-4 max-h-96 overflow-y-auto">
                         <!-- Los artículos se renderizarán aquí dinámicamente -->
                     </div>
@@ -575,7 +581,9 @@
                         <span class="font-semibold">Total:</span>
                         <span id="cart-total" class="font-bold text-primary">$0.00</span>
                     </div>
-<button id="finalize-purchase" class="bg-red-500 hover:bg-red-600 text-white font-bold py-3 rounded-lg mt-2 transition hover:scale-105 transform hidden">Finalizar Compra</button>            </div>
+                    <button id="finalize-purchase" class="bg-red-500 hover:bg-red-600 text-white font-bold py-3 rounded-lg mt-2 transition hover:scale-105 transform hidden">Finalizar Pedido</button>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -591,9 +599,40 @@
             <p class="text-gray-600 dark:text-gray-400 mb-4" id="modal-description">
                 <!-- Descripción específica del producto aquí -->
             </p>
-            <button class="bg-primary hover:bg-red-500 text-white font-bold py-2 px-4 rounded w-full hover:scale-105 transform transition">Añadir al carrito</button>
+            <button id="add-to-cart-modal" class="bg-primary hover:bg-red-500 text-white font-bold py-2 px-4 rounded w-full hover:scale-105 transform transition">Añadir al Carrito</button>
         </div>
     </div>
+
+    <!-- Modal para resumen del pedido -->
+    <div id="order-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-lg w-full mx-4 animate-fade-in">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-semibold">Resumen del Pedido</h2>
+                <button id="close-order-modal" class="text-gray-600 dark:text-gray-300 hover:text-primary"><i class="fas fa-times text-xl"></i></button>
+            </div>
+            <div id="order-items" class="flex flex-col gap-4 max-h-96 overflow-y-auto mb-4"></div>
+            <div class="flex justify-between items-center mb-2">
+                <span class="font-semibold">Total:</span>
+                <span id="order-total" class="font-bold text-primary">$0.00</span>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">Fecha: <span id="order-timestamp"></span></p>
+            <button id="confirm-order" class="bg-primary hover:bg-red-500 text-white font-bold py-2 px-4 rounded w-full hover:scale-105 transform transition">Confirmar</button>
+        </div>
+    </div>
+
+    <!-- Toast notification -->
+    <div id="toast-notification" class="fixed bottom-4 right-4 z-50 hidden">
+    <div class="bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+        <i class="fas fa-check-circle"></i>
+        <span>¡Pedido agregado correctamente!</span>
+    </div>
+</div>
+<div id="toast-notification2" class="fixed bottom-4 right-4 z-50 hidden">
+    <div class="bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+        <i class="fas fa-check-circle"></i>
+        <span>¡Pedidos enviados correctamente!</span>
+    </div>
+</div>
 
     <footer id="footer" class="bg-gray-800 dark:bg-gray-950 text-white py-6">
         <div class="max-w-screen-lg mx-auto text-center">
@@ -611,13 +650,13 @@
             <p>© 2025 FashionHub. Todos los derechos reservados.</p>
         </div>
     </footer>
-
+    
     <script type="module" src="/src/main.js"></script>
 
     <script>
         // Descripciones específicas para cada producto
         const productDescriptions = {
-            "Camisa Casual Hombre": "Camisa de algodón suave, ideal para un look casual y cómodo. Disponible en varias tallas y colores.",
+            "Abrigo Casual Mujer": "Camisa de algodón suave, ideal para un look casual y cómodo. Disponible en varias tallas y colores.",
             "Perfume Floral": "Fragancia fresca y floral con notas de jazmín y rosa. Perfecto para el día a día y ocasiones especiales.",
             "Anillo de Plata": "Anillo elegante de plata 925, diseño minimalista y moderno. Ideal para complementar cualquier atuendo.",
             "Lentes de Sol Modernos": "Lentes de sol con protección UV400 y diseño contemporáneo. Ligeros y cómodos para uso diario.",
